@@ -1,11 +1,23 @@
 
 # My first docker file.
-FROM node:latest
+#BASE IMAGE
+FROM node:11-alpine
 MAINTAINER Vaibhav Aggarwal (XXXXXX@gmail.com)
 
+# RUN commands inside BASE IMAGE
+RUN mkdir -p /var/www 
+RUN apk add --no-cache git
+RUN apk add --no-cache openssh
+
+#CLONE git repo inside BASE IMAGE
+RUN git clone https://github.com/Alakazam03/demo-app-nodejs.git /myapp/
+
+#COPY cloned repo inside BASE IMAGE to another directory at BASE IMAGE
+RUN cp -R /myapp/* /var/www
+
 RUN echo "Tryin to build demo application"
-COPY . /var/www 
+# COPY . /var/www 
 WORKDIR /var/www
 RUN npm install
-EXPOSE 3000
+
 ENTRYPOINT ["npm","start"]
