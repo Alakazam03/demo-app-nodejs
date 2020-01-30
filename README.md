@@ -1,8 +1,8 @@
-# Docker hands on
+# Docker Basic Hands-on Guide
 
-## What is docker
+## What is Docker?
 
-## advanatges of using docker
+## Advanatges of using docker
 
 ## Install docker
  * [Docker For Mac](https://docs.docker.com/v17.12/docker-for-mac/install/)
@@ -11,11 +11,9 @@
 
 ## demo-app-nodejs
 
-  * Install express-generator from npm (node-package-manager).
+  * Open a terminal and install express-generator from npm (node-package-manager).
   * After installing express-generator
-    1. Open a terminal and enter the following commands
-    
-    
+        
     ```
     npm install -g express-generator  //install express-generator
     
@@ -24,15 +22,15 @@
     cd desiredNameofTheApp 
     
     npm install
+    ```
     
-    
-
 ## Add Dockerfile
  * Inside the desiredNameofTheApp/
  * initialize a git repository to track the changes
  
  ``` 
- git add . && git commit -m "Initial Commit."
+ git add .
+ git commit -m "Initial Commit."
  touch Dockerfile
  
  ```
@@ -57,6 +55,8 @@
  docker image ls                //lists out all images available
  ```
  
+ ![Screenshot 2020-01-30 at 1 43 06 PM](https://user-images.githubusercontent.com/23367724/73444941-a8caec00-437f-11ea-9174-a1cd3737a4ae.png)
+ 
  
  > docker run -p <HOST_PORT>:<CONTAINER:PORT> IMAGE_NAME
  
@@ -73,6 +73,8 @@
  More beginner commands at https://towardsdatascience.com/15-docker-commands-you-should-know-970ea5203421
  
  * We can check our live applcation running on docker at [url] (http://localhost:3000)
+ 
+ ![image](https://user-images.githubusercontent.com/23367724/73444833-702b1280-437f-11ea-939c-5e526115fe8c.png)
  
  
  ## Modifications 
@@ -102,6 +104,18 @@
   ```
   
   We have our application running inside a docker container. If ran in detached mode
+  
+  Build a new docker image using modifed Dockerfile
+  ```
+  docker build -t newDesiredName .  //builds an image with name desiredName
+  docker image ls                //lists out all images available
+  ```
+  
+  ![image](https://user-images.githubusercontent.com/23367724/73444572-d5323880-437e-11ea-8d28-e6a30c3f70a1.png)
+  
+  Run new docker image using imageId. (or newDesiredName)
+  ![image](https://user-images.githubusercontent.com/23367724/73444625-f7c45180-437e-11ea-8e95-69c1209f9ff0.png)
+
   ```
   docker ps
   ```
