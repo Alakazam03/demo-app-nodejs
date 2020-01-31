@@ -51,7 +51,7 @@
  * We have a Dockerfile for our node application. We can build an image using the Dockerfile.
  
  ```
- docker build -t desiredName .  //builds an image with name desiredName
+ docker build -t desiredname .  //builds an image with name desiredName
  docker image ls                //lists out all images available
  ```
  
@@ -81,9 +81,10 @@
   Its not a good practice to use dev-code for production purposes. Many environment variables can get shipped along to the production raising security and configuration issues.
   
   * Git is a centralized vcs which is used to maintain the codebase. Code is pushed to master branch after ignoring (environment variables, modules etc..), checking language standards etc... A mirror of master branch respository should be use to run as our application.
-  * Lets make changes
+  * Lets make changes to the old dockerfile
   
   ```
+  FROM node:11-alpine
   # RUN commands inside BASE IMAGE
   RUN mkdir -p /var/www 
   RUN apk add --no-cache git
