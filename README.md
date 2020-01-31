@@ -58,7 +58,7 @@
  ![Screenshot 2020-01-30 at 1 43 06 PM](https://user-images.githubusercontent.com/23367724/73444941-a8caec00-437f-11ea-9174-a1cd3737a4ae.png)
  
  
- > docker run -p <HOST_PORT>:<CONTAINER:PORT> IMAGE_NAME
+ > docker run -p <HOST_PORT>:<CONTAINER_PORT> IMAGE_NAME
  
  * After we have built the image, we have our application's deployable image ready to ship.
  
