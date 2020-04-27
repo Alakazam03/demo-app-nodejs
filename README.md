@@ -1,6 +1,7 @@
 # Docker Basic Hands-on Guide
 
 ## What is Docker?
+Docker is containerization tool.
 
 ## Advanatges of using docker
 
